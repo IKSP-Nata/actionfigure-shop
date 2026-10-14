@@ -1,0 +1,387 @@
+body {
+  margin: 0;
+  margin-top: 2%;
+  text-align: center;
+}
+
+.title {
+  background-image: url(assets/tokyo.jpg);
+  height: 695px;
+  background-size: cover;
+  font-family: "Protest Revolution";
+}
+
+.title h1 {
+  box-shadow: 6px 6px 8px gray;
+  background-color: yellow;
+  text-align: center;
+  font-size: 38px;
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: "Protest Revolution";
+}
+.title h3 {
+  font-style: italic;
+  color: aquamarine;
+}
+.products {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  font-family: "Protest Revolution";
+}
+
+.item {
+  margin: 10px;
+}
+
+.item h3 {
+  color: rgb(255, 0, 238);
+  font-size: 25px;
+}
+.title-product {
+  color: blueviolet;
+  text-shadow: 10px 5px 10px red;
+  margin-top: 100px;
+  font-size: 38px;
+  font-family: "Protest Revolution";
+}
+table,
+tr,
+th,
+td {
+  border: 2px solid rgb(0, 0, 0);
+  border-collapse: collapse;
+}
+table {
+  width: 70%;
+  margin-bottom: 30px;
+}
+th {
+  background-color: greenyellow;
+  height: 50px;
+  font-size: 24px;
+  font-family: "Protest Revolution";
+}
+.table {
+  display: flex;
+  justify-content: center;
+}
+
+td {
+  text-align: left;
+}
+
+.img-table {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+
+  border: 10px solid black;
+}
+td:hover {
+  text-align: justify;
+  background-color: rgb(205, 226, 43);
+}
+tr:hover {
+  background-color: blueviolet;
+}
+/* img {
+    box-shadow: 4px 4px 10px blue;
+  }
+  img {
+    opacity: 0.1;
+  }
+  img:hover {
+    opacity: 1;
+  } */
+
+.details-product {
+  background-image: url(assets/yoaimo.gif);
+  background-size: cover;
+}
+
+@media (max-width: 600px) {
+  * {
+    font-size: 2vw;
+    margin: 2px;
+  }
+
+  .title h1 {
+    font-size: 2vw;
+  }
+
+  .item h3 {
+    font-size: 2vw;
+  }
+
+  .title-product {
+    font-size: 2vw;
+  }
+  th {
+    font-size: 2vw;
+  }
+  .cover {
+    max-width: 50%;
+    max-height: 100%;
+  }
+}
+
+.main-header {
+  background-color: rgb(245, 235, 220);
+  padding-left: 10px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+.header-info {
+  text-align: left;
+  color: rgb(219, 84, 75);
+}
+.header-info a {
+  padding: 0;
+  text-decoration: none;
+}
+.header-info a:hover {
+  background-color: transparent;
+}
+.header-info a:hover {
+  background-color: transparent;
+}
+footer {
+  background-image: radial-gradient(circle, yellow, rgb(212, 28, 236));
+}
+.main-footer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.left-footer {
+  margin-right: auto;
+  margin-left: 40px;
+}
+.right-footer {
+  margin-left: auto;
+  margin-right: 40px;
+}
+.center-footer {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.info-left {
+  color: rgb(0, 0, 0);
+  text-align: left;
+  width: 100%;
+}
+.info-right {
+  color: rgb(18, 3, 2);
+  text-align: right;
+  width: 100%;
+}
+.info-center {
+  color: rgb(24, 3, 2);
+  text-align: center;
+  width: 100%;
+  padding-top: 5px;
+  border-top: 1px solid rgb(146, 168, 133);
+}
+.static {
+  position: static;
+  border: 2px solid steelblue;
+}
+nav {
+  position: absolute;
+  right: 0;
+  display: flex;
+}
+a {
+  text-decoration: none;
+  color: rgb(219, 84, 75);
+  padding: 15px;
+  float: left;
+}
+a:hover {
+  background-color: burlywood;
+}
+
+.main-header {
+  background-color: rgb(245, 235, 220);
+  padding-left: 10px;
+  /* padding-top: 3px;
+  padding-bottom: 3px; */
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  height: 50px;
+}
+.header-info {
+  text-align: left;
+  color: rgb(219, 84, 75);
+  padding: 0px;
+  margin: 14px;
+  position: absolute;
+  left: 0px;
+}
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.tab {
+  background-color: gainsboro;
+  width: 300px;
+  padding: 40px;
+  margin: 20px;
+  border-radius: 20px;
+}
+h1.name {
+  font-size: 30px;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  color: black;
+}
+h2.price {
+  font-size: 38px;
+  color: black;
+}
+.list {
+  list-style-type: disc;
+  margin-bottom: 50px;
+  text-align: left;
+}
+.list li {
+  margin-top: 20px;
+  color: black;
+}
+hr {
+  height: 7px;
+  width: 80%;
+  margin: auto;
+  background-color: rgb(219, 84, 75);
+  border: none;
+  border-radius: 50px;
+  margin-top: 20px;
+}
+div.about {
+  display: flex;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5px;
+  margin-bottom: 30px;
+  background-color: blanchedalmond;
+  width: 80%;
+}
+
+.about {
+  text-align: left;
+  color: black;
+  padding: 10px;
+  width: 100%;
+}
+div.image-about {
+  margin-bottom: auto;
+  margin-top: auto;
+}
+img.about-us {
+  max-width: 100%;
+  max-height: 100%;
+  margin: 10px;
+}
+button {
+  background-color: rgba(219, 85, 75, 0.616);
+  border-radius: 8px;
+  color: white;
+  padding: 8px;
+  border: none;
+  font-size: 20pt;
+  box-shadow: 0px 10px black;
+  cursor: pointer;
+}
+button:hover {
+  /* transform: scale(1.2, 1.2); */
+  background-color: rgb(88, 15, 10);
+}
+button:active {
+  transform: translateY(5px);
+  box-shadow: 0px 5px black;
+}
+
+.fa-map-marker-alt,
+.fa-map-pin,
+.fa-address-book,
+.fa-phone,
+.fa-instagram {
+  margin: 8px;
+  color: black;
+  font-size: 25px;
+}
+.dropdown {
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown-content {
+  display: none;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+  position: absolute;
+  top: 100%;
+  background-color: antiquewhite;
+}
+
+.dropdown-item:hover {
+  background-color:whitesmoke ;
+  cursor: pointer;
+}
+
+a.dropdown-item {
+  min-width: 160px;
+  text-align: left;
+}
+
+li.dropdown-item:hover a.dropdown-item {
+  text-align: left;
+  color: gainsboro;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.main-content {
+  display: flex;
+  justify-content: flex-start;
+  margin: 20px 20px;
+}
+
+
+/* li {
+  text-align: left;
+  padding: 5px;
+  margin: 2px 0px;
+  background-color: wheat;
+  min-width: 160px;
+  box-shadow: 3px 3px gainsboro;
+  border-radius: 5px;
+}
+
+li:hover {
+  background-color: white;
+  cursor: pointer;
+}
+
+li:hover a {
+  color: gainsboro;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+} */

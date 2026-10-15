@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Protest+Revolution&family=Protest+Riot&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="fontawesome-free-5.15.4-web/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="cart.css" />
+  <title>Admin - Daftar Permintaan Restock Produk</title>
+  <script
+    src="https://kit.fontawesome.com/f90068558c.js"
+    crossorigin="anonymous"
+  ></script>
+  <script src="fontawesome-free-5.15.4-web/js/all.min.js" defer></script>
+</head>
+<body class="admin-page-body">
+  <!-- Header Navbar Admin -->
+  <header>
+    <div class="main-header">
+      <h3 class="header-info"><a href="index.html" style="color: inherit; text-decoration: none;">Action Figure Anime</a></h3>
+      <nav>
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="menu.html">Menu</a>
+          <a href="price.html">Price</a>
+          <a href="about.html">About Us</a>
+          <a href="admin-notify.html" class="active-nav-link" style="font-weight: 700; color: #b71c1c;">
+            <i class="fas fa-user-shield"></i> Admin Notifikasi
+          </a>
+          <a href="javascript:void(0)" class="nav-cart-link" id="open-cart-btn" title="Keranjang Belanja">
+            <i class="fas fa-shopping-cart"></i>
+            <span>Keranjang</span>
+            <span class="cart-badge" id="cart-badge">0</span>
+          </a>
+        </nav>
+      </nav>
+    </div>
+  </header>
+
+  <main class="admin-main-container">
+    <div class="admin-page-header">
+      <div class="admin-header-text">
+        <h1 class="admin-title"><i class="fas fa-bell"></i> Laporan Permintaan "Kabari Saya Kalau Ready"</h1>
+        <p class="admin-subtitle">
+          Data calon pembeli yang mendaftar untuk mendapatkan pemberitahuan saat action figure yang habis stok telah restock kembali.
+        </p>
+      </div>
+      <div class="admin-header-actions">
+        <a href="index.html" class="btn-back-to-shop"><i class="fas fa-arrow-left"></i> Kembali ke Toko</a>
+      </div>
+    </div>
+
+    <!-- Ringkasan Statistik Kartu -->
+    <div class="admin-metrics-grid">
+      <div class="metric-card">
+        <div class="metric-icon metric-icon-total"><i class="fas fa-users"></i></div>
+        <div class="metric-info">
+          <span class="metric-label">Total Permintaan Masuk</span>
+          <span class="metric-value" id="metric-total-requests">0</span>
+        </div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-icon metric-icon-products"><i class="fas fa-box"></i></div>
+        <div class="metric-info">
+          <span class="metric-label">Figur Habis yang Diminati</span>
+          <span class="metric-value" id="metric-total-products">0</span>
+        </div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-icon metric-icon-pending"><i class="fas fa-clock"></i></div>
+        <div class="metric-info">
+          <span class="metric-label">Status Menunggu (Pending)</span>
+          <span class="metric-value" id="metric-pending-requests">0</span>
+        </div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-icon metric-icon-done"><i class="fas fa-check-circle"></i></div>
+        <div class="metric-info">
+          <span class="metric-label">Sudah Dihubungi</span>
+          <span class="metric-value" id="metric-done-requests">0</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section Produk Paling Banyak Dicari -->
+    <div class="admin-section-card">
+      <h3 class="admin-section-heading">
+        <i class="fas fa-fire" style="color: #e53935;"></i> Peringkat Produk Paling Dicari (Peminat Tertinggi)
+      </h3>
+      <p class="admin-section-sub">Prioritaskan restock untuk figur-figur dengan jumlah peminat terbanyak di bawah ini:</p>
+      <div class="top-demanded-grid" id="top-demanded-grid">
+        <!-- Diisi secara dinamis -->
+      </div>
+    </div>
+
+    <!-- Tabel Rincian Permintaan & Filter -->
+    <div class="admin-section-card">
+      <div class="admin-table-toolbar">
+        <h3 class="admin-section-heading" style="margin: 0;">
+          <i class="fas fa-list-ul"></i> Daftar Kontak Calon Pembeli
+        </h3>
+
+        <!-- Filter & Pencarian -->
+        <div class="admin-filters-wrap">
+          <div class="filter-item">
+            <label for="filter-product-select">Produk:</label>
+            <select id="filter-product-select" class="admin-select">
+              <option value="ALL">Semua Produk</option>
+            </select>
+          </div>
+          <div class="filter-item">
+            <label for="filter-status-select">Status:</label>
+            <select id="filter-status-select" class="admin-select">
+              <option value="ALL">Semua Status</option>
+              <option value="pending">Menunggu (Pending)</option>
+              <option value="contacted">Sudah Dihubungi</option>
+            </select>
+          </div>
+          <div class="filter-item filter-search">
+            <input type="text" id="filter-search-input" class="admin-input-search" placeholder="Cari email / nomor WA..." />
+          </div>
+        </div>
+      </div>
+
+      <!-- Tabel Data -->
+      <div class="admin-table-responsive">
+        <table class="admin-notify-table">
+          <thead>
+            <tr>
+              <th style="width: 50px;">No</th>
+              <th>Waktu Permintaan</th>
+              <th>Produk yang Dicari</th>
+              <th>Kontak Pembeli</th>
+              <th>Tipe</th>
+              <th>Status</th>
+              <th style="width: 170px;">Aksi</th>
+            </tr>
+          </thead>
+          <tbody id="notify-table-body">
+            <!-- Diisi secara dinamis -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="center-fotter">
+      <div class="main-footer">
+        <p class="info-center">Panel Admin - Action Figure Anime Shop &copy; 2026</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/products-data.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/cart-ui.js"></script>
+  <script src="js/notify.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const storage = window.figureStorage;
+      if (!storage) return;
+
+      const totalReqEl = document.getElementById('metric-total-requests');
+      const totalProdEl = document.getElementById('metric-total-products');
+      const pendingReqEl = document.getElementById('metric-pending-requests');
+      const doneReqEl = document.getElementById('metric-done-requests');
+      const topGrid = document.getElementById('top-demanded-grid');
+      const tableBody = document.getElementById('notify-table-body');
+      const filterProduct = document.getElementById('filter-product-select');
+      const filterStatus = document.getElementById('filter-status-select');
+      const searchInput = document.getElementById('filter-search-input');
+
+      function refreshDashboard() {
+        const requests = storage.getNotifyRequests();
+
+        // 1. Hitung Metrik
+        const total = requests.length;
+        const pending = requests.filter(r => r.status === 'pending').length;
+        const done = requests.filter(r => r.status === 'contacted').length;
+
+        // Kelompokkan per produk
+        const productCounts = {};
+        requests.forEach(r => {
+          const pid = r.productId || 'unknown';
+          if (!productCounts[pid]) {
+            productCounts[pid] = {
+              productId: pid,
+              name: r.productName || pid,
+              image: r.productImage || 'assets/paket.jpg',
+              count: 0
+            };
+          }
+          productCounts[pid].count++;
+        });
+
+        const uniqueProducts = Object.keys(productCounts).length;
+
+        totalReqEl.textContent = total;
+        totalProdEl.textContent = uniqueProducts;
+        pendingReqEl.textContent = pending;
+        doneReqEl.textContent = done;
+
+        // 2. Render Peringkat Produk Paling Dicari
+        const sortedProducts = Object.values(productCounts).sort((a, b) => b.count - a.count);
+        topGrid.innerHTML = '';
+
+        if (!sortedProducts.length) {
+          topGrid.innerHTML = `
+            <div class="admin-empty-notice">
+              <i class="far fa-bell-slash"></i> Belum ada permintaan notifikasi yang masuk.
+            </div>
+          `;
+        } else {
+          sortedProducts.forEach((prod, idx) => {
+            const card = document.createElement('div');
+            card.className = 'top-demanded-card';
+            card.innerHTML = `
+              <div class="top-rank-badge">#${idx + 1}</div>
+              <img src="${prod.image}" alt="${escapeHtml(prod.name)}" class="top-demanded-img" />
+              <div class="top-demanded-details">
+                <h4 class="top-demanded-name">${escapeHtml(prod.name)}</h4>
+                <div class="top-demanded-count">
+                  <i class="fas fa-fire"></i> <strong>${prod.count}</strong> Peminat
+                </div>
+              </div>
+            `;
+            topGrid.appendChild(card);
+          });
+        }
+
+        // 3. Update Opsi Filter Produk
+        const currentSelectedProd = filterProduct.value;
+        filterProduct.innerHTML = '<option value="ALL">Semua Produk</option>';
+        sortedProducts.forEach(prod => {
+          const opt = document.createElement('option');
+          opt.value = prod.productId;
+          opt.textContent = `${prod.name} (${prod.count})`;
+          if (prod.productId === currentSelectedProd) opt.selected = true;
+          filterProduct.appendChild(opt);
+        });
+
+        // 4. Render Tabel Permintaan
+        renderTableRows(requests);
+      }
+
+      function renderTableRows(allRequests) {
+        const prodFilter = filterProduct.value;
+        const statusFilter = filterStatus.value;
+        const searchVal = searchInput.value.trim().toLowerCase();
+
+        const filtered = allRequests.filter(req => {
+          if (prodFilter !== 'ALL' && req.productId !== prodFilter) return false;
+          if (statusFilter !== 'ALL' && req.status !== statusFilter) return false;
+          if (searchVal && !req.contact.toLowerCase().includes(searchVal) && !req.productName.toLowerCase().includes(searchVal)) {
+            return false;
+          }
+          return true;
+        });
+
+        tableBody.innerHTML = '';
+
+        if (!filtered.length) {
+          tableBody.innerHTML = `
+            <tr>
+              <td colspan="7" class="table-empty-td">
+                <i class="fas fa-search"></i> Tidak ada data permintaan yang sesuai filter.
+              </td>
+            </tr>
+          `;
+          return;
+        }
+
+        filtered.forEach((req, idx) => {
+          const tr = document.createElement('tr');
+
+          const isContacted = req.status === 'contacted';
+          const statusClass = isContacted ? 'status-pill-done' : 'status-pill-pending';
+          const statusLabel = isContacted ? '<i class="fas fa-check"></i> Sudah Dihubungi' : '<i class="fas fa-clock"></i> Menunggu';
+
+          const dateStr = formatDate(req.timestamp);
+          const typeIcon = req.type === 'email' ? '<i class="fas fa-envelope"></i> Email' : '<i class="fab fa-whatsapp" style="color: #25d366;"></i> WhatsApp';
+
+          tr.innerHTML = `
+            <td style="text-align: center; font-weight: bold;">${idx + 1}</td>
+            <td><small class="table-date">${dateStr}</small></td>
+            <td>
+              <div class="table-prod-cell">
+                <img src="${req.productImage || 'assets/paket.jpg'}" alt="${escapeHtml(req.productName)}" class="table-prod-thumb" />
+                <span class="table-prod-name">${escapeHtml(req.productName)}</span>
+              </div>
+            </td>
+            <td>
+              <span class="table-contact-val"><strong>${escapeHtml(req.contact)}</strong></span>
+            </td>
+            <td><span class="table-type-pill">${typeIcon}</span></td>
+            <td><span class="status-pill ${statusClass}">${statusLabel}</span></td>
+            <td>
+              <div class="table-action-btns">
+                <button class="btn-toggle-status ${isContacted ? 'btn-mark-pending' : 'btn-mark-done'}" data-id="${req.id}" title="${isContacted ? 'Ubah ke Menunggu' : 'Tandai Sudah Dihubungi'}">
+                  <i class="fas ${isContacted ? 'fa-undo' : 'fa-check'}"></i> ${isContacted ? 'Batal' : 'Hubungi'}
+                </button>
+                <button class="btn-del-request" data-id="${req.id}" title="Hapus permintaan">
+                  <i class="fas fa-trash-alt"></i>
+                </button>
+              </div>
+            </td>
+          `;
+
+          // Event toggle status
+          tr.querySelector('.btn-toggle-status').addEventListener('click', () => {
+            const newStatus = isContacted ? 'pending' : 'contacted';
+            storage.updateNotifyStatus(req.id, newStatus);
+            refreshDashboard();
+          });
+
+          // Event hapus
+          tr.querySelector('.btn-del-request').addEventListener('click', () => {
+            if (confirm(`Hapus permintaan notifikasi dari ${req.contact}?`)) {
+              storage.deleteNotifyRequest(req.id);
+              refreshDashboard();
+            }
+          });
+
+          tableBody.appendChild(tr);
+        });
+      }
+
+      function formatDate(iso) {
+        try {
+          const d = new Date(iso);
+          return d.toLocaleDateString('id-ID', {
+            day: 'numeric',
+            month: 'short',
+            year: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit'
+          });
+        } catch (e) {
+          return '-';
+        }
+      }
+
+      function escapeHtml(str) {
+        const div = document.createElement('div');
+        div.textContent = str || '';
+        return div.innerHTML;
+      }
+
+      // Filter change listeners
+      filterProduct.addEventListener('change', () => renderTableRows(storage.getNotifyRequests()));
+      filterStatus.addEventListener('change', () => renderTableRows(storage.getNotifyRequests()));
+      searchInput.addEventListener('input', () => renderTableRows(storage.getNotifyRequests()));
+
+      // Subscribe event update
+      window.addEventListener('figure_notify_updated', refreshDashboard);
+
+      // Inisialisasi awal
+      refreshDashboard();
+    });
+  </script>
+</body>
+</html>

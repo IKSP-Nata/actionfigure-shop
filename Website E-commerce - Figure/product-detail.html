@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Protest+Revolution&family=Protest+Riot&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="fontawesome-free-5.15.4-web/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="cart.css" />
+  <title id="page-title">Detail Produk - Action Figure Anime</title>
+  <script
+    src="https://kit.fontawesome.com/f90068558c.js"
+    crossorigin="anonymous"
+  ></script>
+  <script src="fontawesome-free-5.15.4-web/js/all.min.js" defer></script>
+</head>
+<body class="detail-page-body">
+  <!-- Header & Navbar -->
+  <header>
+    <div class="main-header">
+      <h3 class="header-info"><a href="index.html" style="color: inherit; text-decoration: none;">Action Figure Anime</a></h3>
+      <nav>
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="menu.html">Menu</a>
+          <a href="price.html">Price</a>
+          <a href="about.html">About Us</a>
+          <a href="admin-notify.html" class="nav-admin-link" title="Panel Admin Notifikasi Stok"><i class="fas fa-user-shield"></i> Admin</a>
+          <a href="javascript:void(0)" class="nav-cart-link" id="open-cart-btn" title="Keranjang Belanja">
+            <i class="fas fa-shopping-cart"></i>
+            <span>Keranjang</span>
+            <span class="cart-badge" id="cart-badge">0</span>
+          </a>
+        </nav>
+      </nav>
+    </div>
+  </header>
+
+  <main class="product-detail-main">
+    <!-- Breadcrumb Navigasi -->
+    <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+      <a href="index.html"><i class="fas fa-home"></i> Home</a>
+      <span class="bc-sep">/</span>
+      <a href="menu.html">Katalog Produk</a>
+      <span class="bc-sep">/</span>
+      <span id="bc-product-name" class="bc-current">Detail Produk</span>
+    </nav>
+
+    <!-- Kontainer Detail Produk -->
+    <div class="product-detail-container" id="product-detail-view">
+      <!-- Kolom Kiri: Foto Besar Produk -->
+      <div class="detail-visual-col">
+        <div class="detail-image-card">
+          <img id="detail-img" src="assets/paket.jpg" alt="Foto Produk Action Figure" class="detail-main-img" />
+          <span class="detail-badge-original">
+            <i class="fas fa-certificate"></i> 100% Original
+          </span>
+        </div>
+      </div>
+
+      <!-- Kolom Kanan: Rincian Produk, Harga, Stok & Aksi -->
+      <div class="detail-info-col">
+        <div class="detail-series-tag" id="detail-series">Anime Series</div>
+        <h1 class="detail-product-title" id="detail-title">Memuat Produk...</h1>
+
+        <!-- Ringkasan Rating Cepat -->
+        <div class="detail-rating-quick" id="detail-rating-quick">
+          <span class="stars-wrap" id="detail-stars"></span>
+          <span class="rating-val" id="detail-rating-val">0.0</span>
+          <a href="#reviews-section" class="rating-link-count" id="detail-rating-count">(0 Ulasan Pembeli)</a>
+        </div>
+
+        <div class="detail-price-box">
+          <div class="detail-price-amount" id="detail-price">Rp 0</div>
+          <div class="detail-stock-status" id="detail-stock-box">
+            <span class="stock-pill" id="detail-stock-pill">Memeriksa stok...</span>
+          </div>
+        </div>
+
+        <div class="detail-attributes-card">
+          <div class="attr-row">
+            <span class="attr-label"><i class="fas fa-ruler-vertical"></i> Ukuran Figur:</span>
+            <span class="attr-value" id="detail-size">-</span>
+          </div>
+          <div class="attr-row">
+            <span class="attr-label"><i class="fas fa-shield-alt"></i> Material:</span>
+            <span class="attr-value">High Quality PVC & ABS Anti-Luntur</span>
+          </div>
+          <div class="attr-row">
+            <span class="attr-label"><i class="fas fa-box-open"></i> Kondisi:</span>
+            <span class="attr-value">Baru (Mint in Sealed Box)</span>
+          </div>
+        </div>
+
+        <div class="detail-desc-box">
+          <h3>Deskripsi Figur</h3>
+          <p id="detail-desc">Memuat rincian deskripsi figur...</p>
+        </div>
+
+        <!-- Tombol Aksi (Beli / Kabari Stok) -->
+        <div class="detail-action-card" id="detail-action-box">
+          <!-- Diisi secara dinamis tergantung stok > 0 atau stok 0 -->
+        </div>
+
+        <!-- Jaminan & Keamanan Belanja -->
+        <div class="detail-guarantees-grid">
+          <div class="guarantee-item">
+            <i class="fas fa-shipping-fast"></i>
+            <span>Packing Kardus & Bubble Wrap 3 Lapis</span>
+          </div>
+          <div class="guarantee-item">
+            <i class="fas fa-undo"></i>
+            <span>Garansi Retur Jika Cacat Pabrik</span>
+          </div>
+          <div class="guarantee-item">
+            <i class="fas fa-headset"></i>
+            <span>Layanan Pelanggan Ramah 24 Jam</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section Ulasan & Rating (Fitur 1) -->
+    <div id="reviews-section" class="reviews-section-anchor">
+      <div id="product-reviews-container">
+        <!-- Komponen ulasan akan di-mount oleh reviews.js -->
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="center-fotter">
+      <div class="main-footer">
+        <div class="left-footer">
+          <h3 class="info-left"><b><i class="fas fa-map-marker-alt"></i> Address</b></h3>
+          <p class="info-left"><i class="fas fa-map-pin"></i> Tukad Indah Genchana No.24, Seminyak, Denpasar</p>
+        </div>
+        <div class="right-footer">
+          <h3 class="info-right"><b><i class="fas fa-address-book"></i> Contacts</b></h3>
+          <p class="info-right"><i class="fas fa-phone"></i> Phone: 0833718994</p>
+          <p class="info-right"><i class="fab fa-instagram"></i> Instagram: @shopfigure</p>
+        </div>
+      </div>
+      <div class="main-footer">
+        <p class="info-center">Copyright &copy; 2026 Action Figure Anime Shop</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts: Data, Storage, Cart, Notify, dan Reviews -->
+  <script src="js/products-data.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/cart-ui.js"></script>
+  <script src="js/notify.js"></script>
+  <script src="js/reviews.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Ambil ID produk dari parameter query URL (?id=...)
+      const urlParams = new URLSearchParams(window.location.search);
+      let productId = urlParams.get('id');
+
+      // Default jika tidak ada id di URL
+      if (!productId || !window.PRODUCTS_DATA[productId]) {
+        productId = 'choso';
+      }
+
+      const product = window.PRODUCTS_DATA[productId];
+      if (!product) return;
+
+      // 2. Set judul halaman & breadcrumbs
+      document.getElementById('page-title').textContent = `${product.name} - Detail Action Figure`;
+      document.getElementById('bc-product-name').textContent = product.name;
+
+      // 3. Render informasi produk
+      document.getElementById('detail-title').textContent = product.name;
+      document.getElementById('detail-img').src = product.image;
+      document.getElementById('detail-img').alt = product.name;
+      document.getElementById('detail-series').textContent = product.series || 'Koleksi Anime';
+      document.getElementById('detail-price').textContent = CartStore.formatRupiah(product.price);
+      document.getElementById('detail-size').textContent = product.size || 'Standar';
+      document.getElementById('detail-desc').textContent = product.description || 'Figur anime berkualitas tinggi dengan detail presisi.';
+
+      // 4. Render status stok & tombol aksi
+      const stockPill = document.getElementById('detail-stock-pill');
+      const actionBox = document.getElementById('detail-action-box');
+
+      if (product.stock > 0) {
+        stockPill.className = 'stock-pill in-stock';
+        stockPill.innerHTML = `<i class="fas fa-check-circle"></i> Stok Tersedia: <strong>${product.stock} unit</strong>`;
+
+        let qtyVal = 1;
+
+        actionBox.innerHTML = `
+          <div class="detail-qty-group">
+            <label class="qty-label">Jumlah Pembelian:</label>
+            <div class="detail-qty-stepper">
+              <button type="button" class="d-qty-btn" id="d-qty-minus">−</button>
+              <span class="d-qty-display" id="d-qty-display">1</span>
+              <button type="button" class="d-qty-btn" id="d-qty-plus">+</button>
+            </div>
+            <small class="qty-max-hint">(Maks. ${product.stock} unit)</small>
+          </div>
+          <div class="detail-buttons-group">
+            <button class="btn-detail-add-cart" id="btn-detail-add">
+              <i class="fas fa-cart-plus"></i> Tambah ke Keranjang
+            </button>
+            <button class="btn-detail-buy-now" id="btn-detail-checkout">
+              <i class="fas fa-bolt"></i> Beli Sekarang
+            </button>
+          </div>
+        `;
+
+        const qtyDisplay = actionBox.querySelector('#d-qty-display');
+        const btnMinus = actionBox.querySelector('#d-qty-minus');
+        const btnPlus = actionBox.querySelector('#d-qty-plus');
+        const btnAdd = actionBox.querySelector('#btn-detail-add');
+        const btnCheckout = actionBox.querySelector('#btn-detail-checkout');
+
+        btnMinus.addEventListener('click', () => {
+          if (qtyVal > 1) {
+            qtyVal--;
+            qtyDisplay.textContent = qtyVal;
+          }
+        });
+
+        btnPlus.addEventListener('click', () => {
+          if (qtyVal < product.stock) {
+            qtyVal++;
+            qtyDisplay.textContent = qtyVal;
+          } else {
+            if (window.cartUI) window.cartUI.showToast(`Batas stok hanya ${product.stock} unit.`, 'warning');
+          }
+        });
+
+        btnAdd.addEventListener('click', () => {
+          const res = window.cartStore.addItem(product, qtyVal);
+          if (res.success) {
+            if (window.cartUI) {
+              window.cartUI.showToast(`${product.name} (${qtyVal}x) dimasukkan ke keranjang!`, 'success');
+              window.cartUI.openDrawer();
+            }
+          } else {
+            if (window.cartUI) window.cartUI.showToast(res.message, 'warning');
+          }
+        });
+
+        btnCheckout.addEventListener('click', () => {
+          const res = window.cartStore.addItem(product, qtyVal);
+          if (res.success) {
+            if (window.cartUI) {
+              window.cartUI.closeDrawer();
+              const checkoutBtn = document.getElementById('btn-checkout');
+              if (checkoutBtn) checkoutBtn.click();
+            }
+          }
+        });
+
+      } else {
+        // STOK HABIS (Stok 0) -> Fitur 2 "Kabari Saya Kalau Ready"
+        stockPill.className = 'stock-pill out-of-stock';
+        stockPill.innerHTML = `<i class="fas fa-times-circle"></i> Stok Habis (Out of Stock)`;
+
+        actionBox.innerHTML = `
+          <div class="out-of-stock-cta-box">
+            <p class="out-of-stock-msg">
+              <i class="fas fa-info-circle"></i> Maaf, produk ini saat ini belum tersedia di gudang kami.
+            </p>
+            <button class="btn-notify-stock btn-detail-notify-large" id="btn-detail-notify">
+              <i class="fas fa-bell"></i> Kabari Saya Kalau Ready
+            </button>
+            <p class="notify-sub-hint">Dapatkan pesan instan ke Email atau WhatsApp Anda saat stok restock.</p>
+          </div>
+        `;
+
+        actionBox.querySelector('#btn-detail-notify').addEventListener('click', () => {
+          if (window.figureNotify) {
+            window.figureNotify.openModal(productId);
+          }
+        });
+      }
+
+      // 5. Update Rating Cepat di Bawah Judul
+      function updateQuickRating() {
+        const stats = window.figureStorage.getAverageRating(productId);
+        const starsContainer = document.getElementById('detail-stars');
+        const ratingVal = document.getElementById('detail-rating-val');
+        const ratingCount = document.getElementById('detail-rating-count');
+
+        starsContainer.innerHTML = '';
+        const num = Math.round(stats.average);
+        for (let i = 1; i <= 5; i++) {
+          const star = document.createElement('i');
+          star.className = i <= num ? 'fas fa-star star-filled' : 'far fa-star star-empty';
+          starsContainer.appendChild(star);
+        }
+
+        ratingVal.textContent = stats.total > 0 ? stats.average.toFixed(1) : '0.0';
+        ratingCount.textContent = stats.total > 0 ? `(${stats.total} Ulasan Pembeli)` : '(Belum ada ulasan)';
+      }
+
+      updateQuickRating();
+
+      // 6. Setup Section Ulasan & Galeri Foto Pembeli
+      const reviewsContainer = document.getElementById('product-reviews-container');
+      if (window.figureReviews) {
+        window.figureReviews.setupProductReviewsSection(reviewsContainer, productId);
+      }
+
+      window.addEventListener('figure_reviews_updated', (e) => {
+        if (e.detail && e.detail.productId === productId) {
+          updateQuickRating();
+        }
+      });
+    });
+  </script>
+</body>
+</html>

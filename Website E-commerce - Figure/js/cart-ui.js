@@ -553,6 +553,15 @@
     }
 
     const product = PRODUCTS_DATA[productId];
+    if (product.stock === 0) {
+      if (window.figureNotify) {
+        window.figureNotify.openModal(productId);
+      } else {
+        showToast('Stok produk ini sedang habis.', 'warning');
+      }
+      return;
+    }
+
     const res = cartStore.addItem(product, 1);
 
     if (res.success) {

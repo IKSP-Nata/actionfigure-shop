@@ -9,15 +9,17 @@
       href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Protest+Revolution&family=Protest+Riot&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="fontawesome-free-5.15.4-web/css/all.min.css" />
     <link rel="stylesheet" href="style.css" />
-    <title>Price</title>
+    <link rel="stylesheet" href="cart.css" />
+    <title>Price - Action Figure Anime</title>
     <script
       src="https://kit.fontawesome.com/f90068558c.js"
       crossorigin="anonymous"
     ></script>
 </head>
 <body>
-    <header>  <header>
+    <header>
         <div class="main-header">
           <h3 class="header-info">Action Figure Anime</h3>
           <nav>
@@ -26,12 +28,17 @@
               <a href="menu.html">Menu</a>
               <a href="price.html">Price</a>
               <a href="about.html">About Us</a>
+              <a href="javascript:void(0)" class="nav-cart-link" id="open-cart-btn" title="Keranjang Belanja">
+                <i class="fas fa-shopping-cart"></i>
+                <span>Keranjang</span>
+                <span class="cart-badge" id="cart-badge">0</span>
+              </a>
             </nav>
           </nav>
         </div>
-      </header></header>
-    <main></main>
-    <footer><section id="price">
+      </header>
+    <main>
+      <section id="price">
         <div class="container">
           <div class="tab">
             <div class="tab-header">
@@ -51,7 +58,9 @@
               <li>Yuji</li>
               <li>Gojo Open glass</li>
             </ul>
-            <button>Beli WOi</button>
+            <button class="btn-pkg-buy" data-product-id="pkg-basic">
+              <i class="fas fa-cart-plus"></i> Beli Paket
+            </button>
           </div>
           <div class="tab">
             <div class="tab-header">
@@ -71,7 +80,9 @@
               <li>Megumi With Nue</li>
               <li>Jiraiya</li>
             </ul>
-            <button>Beli WOI</button>
+            <button class="btn-pkg-buy" data-product-id="pkg-special">
+              <i class="fas fa-cart-plus"></i> Beli Paket
+            </button>
           </div>
           <div class="tab">
             <div class="tab-header">
@@ -91,37 +102,48 @@
               <li>Yuji</li>
               <li>Gojo Open glass</li>
             </ul>
-            <button>Beli WOI</button>
+            <button class="btn-pkg-buy" data-product-id="pkg-premium">
+              <i class="fas fa-cart-plus"></i> Beli Paket
+            </button>
           </div>
         </div>
-        <div class="center-fotter">
-            <div class="main-footer">
-              <div class="left-footer">
-                <h3 class="info-left">
-                  <b><i class="fas fa-map-marker-alt"></i> Address</b>
-                </h3>
-                <p class="info-left">
-                  <i class="fas fa-map-pin"></i> Tukad Indah Genchana
-                  No.24,Seminyak,Denpasar
-                </p>
-              </div>
-              <div class="right-footer">
-                <h3 class="info-right">
-                  <b><i class="fas fa-address-book"></i> Contacts</b>
-                </h3>
-                <p class="info-right">
-                  <i class="fas fa-phone"></i> Phone:0833718994
-                </p>
-                <p class="info-right">
-                  <i class="fab fa-instagram"></i>Instagram:@shopfigure
-                </p>
-              </div>
-            </div>
-            <div class="main-footer">
-              <p class="info-center">
-                CopyrightN&copy;2019 Designed by Figure Shop
-              </p>
-            </div>
-          </div></footer>
+      </section>
+    </main>
+    <footer>
+      <div class="center-fotter">
+        <div class="main-footer">
+          <div class="left-footer">
+            <h3 class="info-left">
+              <b><i class="fas fa-map-marker-alt"></i> Address</b>
+            </h3>
+            <p class="info-left">
+              <i class="fas fa-map-pin"></i> Tukad Indah Genchana
+              No.24,Seminyak,Denpasar
+            </p>
+          </div>
+          <div class="right-footer">
+            <h3 class="info-right">
+              <b><i class="fas fa-address-book"></i> Contacts</b>
+            </h3>
+            <p class="info-right">
+              <i class="fas fa-phone"></i> Phone:0833718994
+            </p>
+            <p class="info-right">
+              <i class="fab fa-instagram"></i>Instagram:@shopfigure
+            </p>
+          </div>
+        </div>
+        <div class="main-footer">
+          <p class="info-center">
+            CopyrightN&copy;2019 Designed by Figure Shop
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Shopping Cart Scripts (Data, State Management, and UI Controller) -->
+    <script src="js/products-data.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/cart-ui.js"></script>
 </body>
 </html>

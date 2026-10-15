@@ -9,7 +9,9 @@
       href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Protest+Revolution&family=Protest+Riot&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="fontawesome-free-5.15.4-web/css/all.min.css" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="cart.css" />
     <title>Action Figure</title>
     <script
       src="https://kit.fontawesome.com/f90068558c.js"
@@ -40,6 +42,11 @@
             <a href="menu.html">Menu</a>
             <a href="price.html">Price</a>
             <a href="about.html">About Us</a>
+            <a href="javascript:void(0)" class="nav-cart-link" id="open-cart-btn" title="Keranjang Belanja">
+              <i class="fas fa-shopping-cart"></i>
+              <span>Keranjang</span>
+              <span class="cart-badge" id="cart-badge">0</span>
+            </a>
           </nav>
         </nav>
       </div>
@@ -56,6 +63,12 @@
           <h2>Figure Geto</h2>
           <img class="cover" width="250px" height="auto" src="assets/gto.png" />
           <h4>"Beli figure geto agar menjadi nyata"<br />-Chesta-</h4>
+          <div class="hero-cta-container">
+            <span class="hero-price-badge">Rp 5.000.000</span>
+            <button class="btn-add-cart hero-btn-add" data-product-id="geto-hero">
+              <i class="fas fa-cart-plus"></i> Tambah ke Keranjang
+            </button>
+          </div>
         </div>
       </section>
 
@@ -66,64 +79,169 @@
         </div>
         <div class="products">
           <div class="item">
-            <img src="assets/khoso.png" width="250px" height="350" />
+            <img src="assets/khoso.png" width="250px" height="350" alt="Figure Choso" />
             <h3>"Figure Choso"</h3>
+            <div class="item-meta">
+              <span class="item-price">Rp 100.000</span>
+              <span class="item-stock"><i class="fas fa-box"></i> Stok: 8</span>
+            </div>
+            <button class="btn-add-cart" data-product-id="choso">
+              <i class="fas fa-cart-plus"></i> Tambah ke Keranjang
+            </button>
           </div>
           <div class="item">
-            <img src="assets/movjga.png" width="250px" height="350" />
+            <img src="assets/movjga.png" width="250px" height="350" alt="Figure Gojoo" />
             <h3>"Figure Gojoo"</h3>
+            <div class="item-meta">
+              <span class="item-price">Rp 175.000</span>
+              <span class="item-stock"><i class="fas fa-box"></i> Stok: 5</span>
+            </div>
+            <button class="btn-add-cart" data-product-id="gojoo">
+              <i class="fas fa-cart-plus"></i> Tambah ke Keranjang
+            </button>
           </div>
           <div class="item">
-            <img src="assets/sukuna.jpeg" width="250px" height="350" />
+            <img src="assets/sukuna.jpeg" width="250px" height="350" alt="Figure Sukuna" />
             <h3>"Figure Sukuna"</h3>
+            <div class="item-meta">
+              <span class="item-price">Rp 250.000</span>
+              <span class="item-stock"><i class="fas fa-box"></i> Stok: 6</span>
+            </div>
+            <button class="btn-add-cart" data-product-id="sukuna">
+              <i class="fas fa-cart-plus"></i> Tambah ke Keranjang
+            </button>
           </div>
           <div class="item">
-            <img src="assets/bgjo.png" width="250px" height="350" />
+            <img src="assets/bgjo.png" width="250px" height="350" alt="Figure Gojo Satoru" />
             <h3>"Figure Gojo Satoru"</h3>
+            <div class="item-meta">
+              <span class="item-price">Rp 300.000</span>
+              <span class="item-stock"><i class="fas fa-box"></i> Stok: 4</span>
+            </div>
+            <button class="btn-add-cart" data-product-id="gojo-satoru">
+              <i class="fas fa-cart-plus"></i> Tambah ke Keranjang
+            </button>
           </div>
           <div class="item">
-            <img src="assets/hosoo.jpg" width="250px" height="350" />
+            <img src="assets/hosoo.jpg" width="250px" height="350" alt="Figure Chosoo" />
             <h3>"Figure Chosoo"</h3>
+            <div class="item-meta">
+              <span class="item-price">Rp 110.000</span>
+              <span class="item-stock"><i class="fas fa-box"></i> Stok: 7</span>
+            </div>
+            <button class="btn-add-cart" data-product-id="chosoo">
+              <i class="fas fa-cart-plus"></i> Tambah ke Keranjang
+            </button>
           </div>
           <div class="item">
-            <img src="assets/jogo.jpeg" width="250px" height="350" />
+            <img src="assets/jogo.jpeg" width="250px" height="350" alt="Figure Gojo Open Eyes" />
             <h3>"Figure Gojo Open Eyes"</h3>
+            <div class="item-meta">
+              <span class="item-price">Rp 180.000</span>
+              <span class="item-stock"><i class="fas fa-box"></i> Stok: 5</span>
+            </div>
+            <button class="btn-add-cart" data-product-id="gojo-open-eyes">
+              <i class="fas fa-cart-plus"></i> Tambah ke Keranjang
+            </button>
           </div>
           <div class="item">
-            <img src="assets/removegumi.png" width="250px" height="350" />
+            <img src="assets/removegumi.png" width="250px" height="350" alt="Figure Megumi" />
             <h3>"Figure Megumi"</h3>
+            <div class="item-meta">
+              <span class="item-price">Rp 50.000</span>
+              <span class="item-stock"><i class="fas fa-box"></i> Stok: 10</span>
+            </div>
+            <button class="btn-add-cart" data-product-id="megumi">
+              <i class="fas fa-cart-plus"></i> Tambah ke Keranjang
+            </button>
           </div>
           <div class="item">
-            <img src="assets/nue.jpg" width="250px" height="350" />
+            <img src="assets/nue.jpg" width="250px" height="350" alt="Figure Megumi With Nue" />
             <h3>"Figure Megumi With Nue"</h3>
+            <div class="item-meta">
+              <span class="item-price">Rp 320.000</span>
+              <span class="item-stock"><i class="fas fa-box"></i> Stok: 4</span>
+            </div>
+            <button class="btn-add-cart" data-product-id="megumi-nue">
+              <i class="fas fa-cart-plus"></i> Tambah ke Keranjang
+            </button>
           </div>
           <div class="item">
-            <img src="assets/paket.jpg" width="250px" height="350" />
+            <img src="assets/paket.jpg" width="250px" height="350" alt="Paket Figure" />
             <h3>"Paket Figure"</h3>
+            <div class="item-meta">
+              <span class="item-price">Rp 450.000</span>
+              <span class="item-stock"><i class="fas fa-box"></i> Stok: 3</span>
+            </div>
+            <button class="btn-add-cart" data-product-id="paket-figure">
+              <i class="fas fa-cart-plus"></i> Tambah ke Keranjang
+            </button>
           </div>
           <div class="item">
-            <img src="assets/yuji.jpeg" width="250px" height="350" />
+            <img src="assets/yuji.jpeg" width="250px" height="350" alt="Figure Yuji" />
             <h3>"Figure Yuji"</h3>
+            <div class="item-meta">
+              <span class="item-price">Rp 2.000.000</span>
+              <span class="item-stock"><i class="fas fa-box"></i> Stok: 2</span>
+            </div>
+            <button class="btn-add-cart" data-product-id="yuji">
+              <i class="fas fa-cart-plus"></i> Tambah ke Keranjang
+            </button>
           </div>
           <div class="item">
-            <img src="assets/inumaki.jpg" width="250px" height="350" />
+            <img src="assets/inumaki.jpg" width="250px" height="350" alt="Figure Inumaki" />
             <h3>"Figure Inumaki"</h3>
+            <div class="item-meta">
+              <span class="item-price">Rp 350.000</span>
+              <span class="item-stock"><i class="fas fa-box"></i> Stok: 5</span>
+            </div>
+            <button class="btn-add-cart" data-product-id="inumaki">
+              <i class="fas fa-cart-plus"></i> Tambah ke Keranjang
+            </button>
           </div>
           <div class="item">
-            <img src="assets/asta.png" width="250px" height="350" />
+            <img src="assets/asta.png" width="250px" height="350" alt="Figure Asta" />
             <h3>"Figure Asta"</h3>
+            <div class="item-meta">
+              <span class="item-price">Rp 200.000</span>
+              <span class="item-stock"><i class="fas fa-box"></i> Stok: 6</span>
+            </div>
+            <button class="btn-add-cart" data-product-id="asta">
+              <i class="fas fa-cart-plus"></i> Tambah ke Keranjang
+            </button>
           </div>
           <div class="item">
-            <img src="assets/remover.png" width="250px" height="350" />
+            <img src="assets/remover.png" width="250px" height="350" alt="Figure Nobara" />
             <h3>"Figure Nobara"</h3>
+            <div class="item-meta">
+              <span class="item-price">Rp 120.000</span>
+              <span class="item-stock"><i class="fas fa-box"></i> Stok: 8</span>
+            </div>
+            <button class="btn-add-cart" data-product-id="nobara">
+              <i class="fas fa-cart-plus"></i> Tambah ke Keranjang
+            </button>
           </div>
           <div class="item">
-            <img src="assets/noelle.png" width="350px" height="350" />
+            <img src="assets/noelle.png" width="350px" height="350" alt="Figure Noelle" />
             <h3>"Figure Noelle"</h3>
+            <div class="item-meta">
+              <span class="item-price">Rp 220.000</span>
+              <span class="item-stock"><i class="fas fa-box"></i> Stok: 5</span>
+            </div>
+            <button class="btn-add-cart" data-product-id="noelle">
+              <i class="fas fa-cart-plus"></i> Tambah ke Keranjang
+            </button>
           </div>
           <div class="item">
-            <img src="assets/zoro.png" width="250px" height="350" />
+            <img src="assets/zoro.png" width="250px" height="350" alt="Figure Zoro" />
             <h3>"Figure Zoro"</h3>
+            <div class="item-meta">
+              <span class="item-price">Rp 280.000</span>
+              <span class="item-stock"><i class="fas fa-box"></i> Stok: 4</span>
+            </div>
+            <button class="btn-add-cart" data-product-id="zoro">
+              <i class="fas fa-cart-plus"></i> Tambah ke Keranjang
+            </button>
           </div>
         </div>
       </section>
@@ -137,18 +255,24 @@
               <th>Size</th>
               <th>Price</th>
               <th>Image</th>
+              <th>Beli</th>
             </tr>
             <tr>
               <td>Choso</td>
-              <td>Smaall</td>
+              <td>Small</td>
               <td>100.000</td>
               <td>
                 <img
                   src="assets/chos.jpg"
-                  alt="Geto"
+                  alt="Choso"
                   width="100px"
                   class="img-table"
                 />
+              </td>
+              <td>
+                <button class="btn-table-buy" data-product-id="choso">
+                  <i class="fas fa-cart-plus"></i> Beli
+                </button>
               </td>
             </tr>
             <tr>
@@ -158,10 +282,15 @@
               <td>
                 <img
                   src="assets/megumi.jpg"
-                  alt="Geto"
+                  alt="Megumi"
                   width="100px"
                   class="img-table"
                 />
+              </td>
+              <td>
+                <button class="btn-table-buy" data-product-id="megumi">
+                  <i class="fas fa-cart-plus"></i> Beli
+                </button>
               </td>
             </tr>
             <tr>
@@ -171,10 +300,15 @@
               <td>
                 <img
                   src="assets/gojo.jpg"
-                  alt="Geto"
+                  alt="Gojo"
                   width="100px"
                   class="img-table"
                 />
+              </td>
+              <td>
+                <button class="btn-table-buy" data-product-id="gojoo">
+                  <i class="fas fa-cart-plus"></i> Beli
+                </button>
               </td>
             </tr>
             <tr>
@@ -184,10 +318,15 @@
               <td>
                 <img
                   src="assets/yuji.jpeg"
-                  alt="Geto"
+                  alt="Itadori Yuji"
                   width="100px"
                   class="img-table"
                 />
+              </td>
+              <td>
+                <button class="btn-table-buy" data-product-id="yuji">
+                  <i class="fas fa-cart-plus"></i> Beli
+                </button>
               </td>
             </tr>
             <tr>
@@ -197,10 +336,15 @@
               <td>
                 <img
                   src="assets/sukuna.jpeg"
-                  alt="Geto"
+                  alt="Sukuna"
                   width="100px"
                   class="img-table"
                 />
+              </td>
+              <td>
+                <button class="btn-table-buy" data-product-id="sukuna">
+                  <i class="fas fa-cart-plus"></i> Beli
+                </button>
               </td>
             </tr>
             <tr>
@@ -210,10 +354,15 @@
               <td>
                 <img
                   src="assets/nobaraa.jpg"
-                  alt="Geto"
+                  alt="Nobara"
                   width="100px"
                   class="img-table"
                 />
+              </td>
+              <td>
+                <button class="btn-table-buy" data-product-id="nobara">
+                  <i class="fas fa-cart-plus"></i> Beli
+                </button>
               </td>
             </tr>
             <tr>
@@ -228,6 +377,11 @@
                   class="img-table"
                 />
               </td>
+              <td>
+                <button class="btn-table-buy" data-product-id="geto-hero">
+                  <i class="fas fa-cart-plus"></i> Beli
+                </button>
+              </td>
             </tr>
             <tr>
               <td>Asta</td>
@@ -236,10 +390,15 @@
               <td>
                 <img
                   src="assets/asta.png"
-                  alt="Geto"
+                  alt="Asta"
                   width="100px"
                   class="img-table"
                 />
+              </td>
+              <td>
+                <button class="btn-table-buy" data-product-id="asta">
+                  <i class="fas fa-cart-plus"></i> Beli
+                </button>
               </td>
             </tr>
             <tr>
@@ -249,10 +408,15 @@
               <td>
                 <img
                   src="assets/inumaki.jpg"
-                  alt="Geto"
+                  alt="Inumaki"
                   width="100px"
                   class="img-table"
                 />
+              </td>
+              <td>
+                <button class="btn-table-buy" data-product-id="inumaki">
+                  <i class="fas fa-cart-plus"></i> Beli
+                </button>
               </td>
             </tr>
           </table>
@@ -279,7 +443,9 @@
               <li>Yuji</li>
               <li>Gojo Open glass</li>
             </ul>
-            <button>Beli WOi</button>
+            <button class="btn-pkg-buy" data-product-id="pkg-basic">
+              <i class="fas fa-cart-plus"></i> Beli Paket
+            </button>
           </div>
           <div class="tab">
             <div class="tab-header">
@@ -299,7 +465,9 @@
               <li>Megumi With Nue</li>
               <li>Jiraiya</li>
             </ul>
-            <button>Beli WOI</button>
+            <button class="btn-pkg-buy" data-product-id="pkg-special">
+              <i class="fas fa-cart-plus"></i> Beli Paket
+            </button>
           </div>
           <div class="tab">
             <div class="tab-header">
@@ -319,7 +487,9 @@
               <li>Yuji</li>
               <li>Gojo Open glass</li>
             </ul>
-            <button>Beli WOI</button>
+            <button class="btn-pkg-buy" data-product-id="pkg-premium">
+              <i class="fas fa-cart-plus"></i> Beli Paket
+            </button>
           </div>
         </div>
       </section>
@@ -381,5 +551,9 @@
         </div>
       </div>
     </footer>
+    <!-- Shopping Cart Scripts (Data, State Management, and UI Controller) -->
+    <script src="js/products-data.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/cart-ui.js"></script>
   </body>
 </html>

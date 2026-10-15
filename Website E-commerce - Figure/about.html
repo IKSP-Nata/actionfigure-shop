@@ -9,8 +9,10 @@
       href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Protest+Revolution&family=Protest+Riot&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="fontawesome-free-5.15.4-web/css/all.min.css" />
     <link rel="stylesheet" href="style.css" />
-    <title>Action Figure</title>
+    <link rel="stylesheet" href="cart.css" />
+    <title>About Us - Action Figure Anime</title>
     <script
       src="https://kit.fontawesome.com/f90068558c.js"
       crossorigin="anonymous"
@@ -26,6 +28,11 @@
             <a href="menu.html">Menu</a>
             <a href="price.html">Price</a>
             <a href="about.html">About Us</a>
+            <a href="javascript:void(0)" class="nav-cart-link" id="open-cart-btn" title="Keranjang Belanja">
+              <i class="fas fa-shopping-cart"></i>
+              <span>Keranjang</span>
+              <span class="cart-badge" id="cart-badge">0</span>
+            </a>
           </nav>
         </nav>
       </div>
@@ -75,5 +82,10 @@
         </div>
       </section>
     </footer>
+
+    <!-- Shopping Cart Scripts (Data, State Management, and UI Controller) -->
+    <script src="js/products-data.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/cart-ui.js"></script>
   </body>
 </html>
